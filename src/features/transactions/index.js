@@ -1,7 +1,5 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { showNotification } from "../common/headerSlice";
 import TitleCard from "../../components/Cards/TitleCard";
 import { RECENT_TRANSACTIONS } from "../../utils/dummyData";
 import FunnelIcon from "@heroicons/react/24/outline/FunnelIcon";
@@ -25,17 +23,17 @@ const TopSideButtons = ({ removeFilter, applyFilter, applySearch }) => {
   };
 
   useEffect(() => {
-    if (searchText == "") {
+    if (searchText === "") {
       removeAppliedFilter();
     } else {
       applySearch(searchText);
-    }
+    } // eslint-disable-next-line
   }, [searchText]);
 
   return (
     <div className="inline-block float-right">
       <SearchBar searchText={searchText} styleClass="mr-4" setSearchText={setSearchText} />
-      {filterParam != "" && (
+      {filterParam !== "" && (
         <button onClick={() => removeAppliedFilter()} className="btn btn-xs mr-2 btn-active btn-ghost normal-case">
           {filterParam}
           <XMarkIcon className="w-4 ml-2" />
@@ -50,13 +48,13 @@ const TopSideButtons = ({ removeFilter, applyFilter, applySearch }) => {
           {locationFilters.map((l, k) => {
             return (
               <li key={k}>
-                <a onClick={() => showFiltersAndApply(l)}>{l}</a>
+                <button onClick={() => showFiltersAndApply(l)}>{l}</button>
               </li>
             );
           })}
           <div className="divider mt-0 mb-0"></div>
           <li>
-            <a onClick={() => removeAppliedFilter()}>Remove Filter</a>
+            <button onClick={() => removeAppliedFilter()}>Remove Filter</button>
           </li>
         </ul>
       </div>
@@ -73,7 +71,7 @@ function Transactions() {
 
   const applyFilter = (params) => {
     let filteredTransactions = RECENT_TRANSACTIONS.filter((t) => {
-      return t.location == params;
+      return t.location === params;
     });
     setTrans(filteredTransactions);
   };

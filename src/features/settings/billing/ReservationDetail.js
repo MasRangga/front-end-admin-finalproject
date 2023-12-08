@@ -2,14 +2,9 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TitleCard from "../../../components/Cards/TitleCard";
-import { showNotification } from "../../common/headerSlice";
-import { getReservationDetail, getReservationList, updateReservation } from "../billing/slices/reservationSlice";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import InputText from "../../../components/Input/InputText";
-import TextAreaInput from "../../../components/Input/TextAreaInput";
-import ToogleInput from "../../../components/Input/ToogleInput";
+import { getReservationDetail,  updateReservation } from "../billing/slices/reservationSlice";
+
 import { useParams } from "react-router-dom";
-import SelectBox from "../../../components/Input/SelectBox";
 
 function ReservationDetail() {
   const { reservation } = useSelector((state) => state.reservations);
@@ -27,7 +22,7 @@ function ReservationDetail() {
 
   useEffect(() => {
     dispatch(getReservationDetail(params.id));
-  }, []);
+  }, [dispatch,params.id]);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -60,7 +55,7 @@ function ReservationDetail() {
                     className="select select-primary w-full max-w-xs mb-3"
                     value={statusValue}
                     onChange={handleStatusChange}
-                    disabled={reservation.status == "Approved" || reservation.status == "Rejected"}>
+                    disabled={reservation.status === "Approved" || reservation.status === "Rejected"}>
                     <option value="">--Update--</option>
                     <option value="Approved">Approved</option>
                     <option value="Rejected">Rejected</option>

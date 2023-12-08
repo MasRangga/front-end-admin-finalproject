@@ -1,9 +1,8 @@
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TitleCard from "../../../components/Cards/TitleCard";
-import { showNotification } from "../../common/headerSlice";
-import { getReservationDetail, getReservationList } from "./slices/reservationSlice";
+import {  getReservationList } from "./slices/reservationSlice";
 import { useNavigate } from "react-router-dom";
 
 function Billing() {
@@ -20,7 +19,7 @@ function Billing() {
 
   useEffect(() => {
     dispatch(getReservationList());
-  }, []);
+  }, [dispatch]);
 
   const handleButtonClick = (id) => {
     navigate(`/app/reservation/${id}`);

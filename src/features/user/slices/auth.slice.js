@@ -49,7 +49,7 @@ const authSlice = createSlice({
       })
       .addCase(registerUser.fulfilled, (state, action) => {
         state.loading = false;
-        if (action.payload.status == "error") {
+        if (action.payload.status === "error") {
           state.errorMessage = action.payload.message;
         } else {
           state.errorMessage = "";
@@ -64,7 +64,7 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
-        if (action.payload.status == "error") {
+        if (action.payload.status === "error") {
           state.errorMessage = action.payload.message;
         } else {
           console.info(action.payload);
