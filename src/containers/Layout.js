@@ -25,7 +25,7 @@ function Layout() {
         NotificationManager.error(newNotificationMessage, "Error");
       dispatch(removeNotificationMessage());
     }
-  }, []);
+  }, [newNotificationStatus,newNotificationMessage,dispatch]);
 
   return (
     <>

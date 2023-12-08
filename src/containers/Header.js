@@ -1,11 +1,11 @@
 import { themeChange } from "theme-change";
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import MoonIcon from "@heroicons/react/24/outline/MoonIcon";
 import SunIcon from "@heroicons/react/24/outline/SunIcon";
 function Header() {
-  const { noOfNotifications, pageTitle } = useSelector((state) => state.header);
+  const {  pageTitle } = useSelector((state) => state.header);
   const [currentTheme, setCurrentTheme] = useState(
     localStorage.getItem("theme")
   );
@@ -23,7 +23,7 @@ function Header() {
       }
     }
     // 👆 false parameter is required for react project
-  }, []);
+  }, [currentTheme]);
 
   // Opening right sidebar for notification
   function logoutUser() {
@@ -106,7 +106,7 @@ function Header() {
               {/* <li className=''><Link to={'/app/settings-billing'}>Bill History</Link></li> */}
               {/* <div className="divider mt-0 mb-0"></div> */}
               <li>
-                <a onClick={logoutUser}>Logout</a>
+                <button onClick={logoutUser}>Logout</button>
               </li>
             </ul>
           </div>
