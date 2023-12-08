@@ -6,7 +6,8 @@ const initialState = {
   user: [],
 };
 
-const API_URL = "https://back-end-production-a31e.up.railway.app/dashboard-api/user/";
+const API_URL =
+  "https://back-end-finalproject-production.up.railway.app/dashboard-api/user/";
 
 export const getUserDetail = createAsyncThunk("getUserDetail", async () => {
   try {

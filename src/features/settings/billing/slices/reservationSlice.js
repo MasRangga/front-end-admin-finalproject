@@ -7,7 +7,8 @@ const initialState = {
   reservation: "",
 };
 
-const API_URL = "https://back-end-production-a31e.up.railway.app/dashboard-api/reservations/";
+const API_URL =
+  "https://back-end-finalproject-production.up.railway.app/dashboard-api/reservations/";
 
 export const getReservationList = createAsyncThunk("getReservationList", async () => {
   try {

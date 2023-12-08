@@ -7,7 +7,8 @@ const initialState = {
   token: "",
 };
 
-const API_URL = "https://back-end-production-a31e.up.railway.app/dashboard-api/auth/";
+const API_URL =
+  "https://back-end-finalproject-production.up.railway.app/dashboard-api/auth/";
 
 export const registerUser = createAsyncThunk("registerUser", async (registerObj) => {
   try {
