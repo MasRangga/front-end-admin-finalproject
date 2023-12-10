@@ -6,8 +6,8 @@ function LandingIntro() {
       <div className="hero-content py-12">
         <div className="max-w-md">
           <h1 className="text-3xl text-center font-bold ">
-            <img src="/logo192.png" className="w-12 inline-block mr-2 mask mask-circle" alt="dashwind-logo" />
-            Klinik Heula
+            <img src="/logo1.png" className="w-40 inline-block mr-2 mask mask-circle" alt="klinikego-logo" />
+            Klinik Ego
           </h1>
 
           <div className="text-center mt-12">

@@ -24,11 +24,11 @@ function LeftSidebar() {
         <li className="mb-2 font-semibold text-xl">
           <Link to={"/app/reservation"}>
             <img
-              className="mask mask-squircle w-10"
-              src="/logo192.png"
+              className="mask mask-squircle w-14"
+              src="/logo1.png"
               alt="DashWind Logo"
             />
-            Klinik Heula Dashboard
+            Klinik Ego Dashboard
           </Link>{" "}
         </li>
         {routes.map((route, k) => {
